@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">SmartFarm</string>
+    <string name="smart_farm">Smart Farm For Everyone</string>
+    <string name="no_account_yet_create_one">No Account yet? Create One</string>
+    <string name="login">Login</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_password">Enter password</string>
+    <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="proceed">Proceed</string>
+    <string name="radio_buyer">Buyer</string>
+    <string name="radio_seller">Seller</string>
+    <string name="select_user_type">Select User Type</string>
+    <string name="farmer">Farmer</string>
+    <string name="buyer">Buyer</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="password">password</string>
+    <string name="title_activity_farmer_dashboard">FarmerDashboardActivity</string>
+    <string name="click_on_the_farm_portal_and_register_as_a_seller_or_buyer">Click on the Farm Portal and register as a Seller or Buyer</string>
+    <string name="smartfarm_brings_sellers_and_buyers_of_farm_products_today_for_ease_of_transaction">SmartFarm brings Sellers and Buyers of farm products today for ease of Transaction</string>
+    <string name="add_products_here">Add Farm Products here</string>
+    <string name="view_products">View Products</string>
+    <string name="product_name">Product Name :</string>
+    <string name="quantity_in_kg">Quantity in Kg</string>
+    <string name="price_in_naira">Price in Naira</string>
+    <string name="state">State</string>
+    <string name="lga">Lga</string>
+    <string name="location">Location</string>
+    <string name="add_product">Add Farm Product</string>
+    <string name="enter_product">Enter Farm Product</string>
+    <string name="transaction_successful">Transaction Successful !</string>
+    <string name="thank_you_for_your_patronage">Thank you for your patronage!</string>
+    <string name="search">search_hint</string>
+    <string name="action_search">action_search</string>
+
+
+    <string-array name="categoryProductArray">
+        <item>"category 1"</item>
+        <item>"category 2"</item>
+        <item>"category 3"</item>
+        <item>"category 4"</item>
+    </string-array>
+
+</resources>

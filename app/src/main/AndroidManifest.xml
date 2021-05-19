@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="hector.developers.smartfarm">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher2"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning,HardcodedDebugMode">
+
+        <activity android:name=".details.ProdDetailsActivity" />
+        <activity android:name=".list.FarmListActivity" />
+        <activity android:name=".list.ProdListActivity" />
+        <activity android:name=".list.UsersList" />
+        <activity android:name=".details.FarmImplementDetailsActivity" />
+        <activity android:name=".list.FarmImplementListActivity" />
+        <activity android:name=".activities.FarmImplementActivity" />
+        <activity android:name=".activities.FarmImplementDealerActivity" />
+        <activity android:name=".activities.SuccessPageActivity" />
+
+        <meta-data
+            android:name="co.paystack.android.PublicKey"
+            android:value="pk_test_c5ffb98869d21f1caed3639626c1fa31f24be5e4" />
+
+        <activity android:name=".details.ProductDetailsActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".list.ProductListActivity" />
+        <activity android:name=".activities.ProductActivity" />
+        <activity android:name=".activities.FarmerDashboardActivity" />
+        <activity android:name=".activities.RegistrationActivity" />
+        <activity android:name=".activities.BuyerDashboardActivity" />
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.UpdateProductActivity" />
+        <activity android:name=".activities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

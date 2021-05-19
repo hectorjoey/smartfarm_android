@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "134930724427",
+    "firebase_url": "https://smartfarm-dec6b.firebaseio.com",
+    "project_id": "smartfarm-dec6b",
+    "storage_bucket": "smartfarm-dec6b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134930724427:android:edb2993994993b7a33bfce",
+        "android_client_info": {
+          "package_name": "hector.developers.smartfarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134930724427-j8it4uhsrbl9i5it2d2461djpgn0840c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hector.developers.smartfarm",
+            "certificate_hash": "24a45d19830d4617a8d2f6d9c07d8ef26cce2d63"
+          }
+        },
+        {
+          "client_id": "134930724427-62e89gl9aic2j40p5j5aoi1bhkhhi4sa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhRxeDTGeS8f51ekSmEm4S-O6jrBmUpko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "134930724427-62e89gl9aic2j40p5j5aoi1bhkhhi4sa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
