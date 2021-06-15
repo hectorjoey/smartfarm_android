@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
-    tools:context=".activities.UpdateProductActivity">
+    tools:context=".activities.UpdateImplementActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,22 +23,21 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:gravity="center"
-            android:text="Update Farm Product"
+            android:text="Update Farm Implement"
             android:textSize="22sp" />
 
-
-        <!--Name of Product-->
+        <!--Name of Farm Implement-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textUpdateProductName"
+            android:id="@+id/textUpdateImplementName"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Product Name"
+            android:hint="Name Of Implement"
             android:padding="4dp"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/updateProductName"
+                android:id="@+id/updateImplementName"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:inputType="textCapWords"
@@ -47,18 +45,18 @@
                 android:textSize="15sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Quantity-->
+        <!--Implement Size-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textUpdateQuantity"
+            android:id="@+id/textUpdateSize"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Quantity"
+            android:hint="Size"
             android:padding="4dp"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/updateQuantity"
+                android:id="@+id/updateImplementSize"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:inputType="number"
@@ -66,14 +64,15 @@
                 android:textSize="15sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--category-->
+        <!--implement category-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/et_custom"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="4dp">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -86,12 +85,12 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-condensed"
                     android:padding="8dp"
-                    android:text="Product Category"
+                    android:text="Implement Category"
                     android:textColor="#48C9B0"
                     android:textSize="20sp" />
 
                 <Spinner
-                    android:id="@+id/updateCategorySpinner"
+                    android:id="@+id/updateImplementCategorySpinner"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_marginEnd="8dp" />
@@ -100,7 +99,7 @@
 
         <!--Price-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/editUpdatePrice"
+            android:id="@+id/editUpdatedImplementPrice"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -109,7 +108,7 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/updatePrice"
+                android:id="@+id/updateImplementPrice"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:inputType="number"
@@ -118,14 +117,14 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/updateProduct"
+            android:id="@+id/updateImplement"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="18dp"
             android:background="@drawable/registration_button"
-            android:text="Update Product"
+            android:text="Update Farm Implement"
             android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>

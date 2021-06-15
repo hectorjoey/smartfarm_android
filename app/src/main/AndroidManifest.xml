@@ -18,14 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning,HardcodedDebugMode">
-
+        <activity android:name=".details.UserDetailsActivity"></activity>
+        <activity android:name=".details.FarmImpleDetailsActivity" />
+        <activity android:name=".activities.UpdateImplementActivity" />
         <activity android:name=".details.ProdDetailsActivity" />
         <activity android:name=".list.FarmListActivity" />
         <activity android:name=".list.ProdListActivity" />
         <activity android:name=".list.UsersList" />
         <activity android:name=".details.FarmImplementDetailsActivity" />
         <activity android:name=".list.FarmImplementListActivity" />
-        <activity android:name=".activities.FarmImplementActivity" />
         <activity android:name=".activities.FarmImplementDealerActivity" />
         <activity android:name=".activities.SuccessPageActivity" />
 
@@ -42,6 +43,7 @@
         <activity android:name=".activities.BuyerDashboardActivity" />
         <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.UpdateProductActivity" />
+        <activity android:name=".activities.FarmImplementActivity" />
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

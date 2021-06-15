@@ -3,7 +3,6 @@ package hector.developers.smartfarm.model;
 import java.io.Serializable;
 
 public class Products implements Serializable {
-
     private Long id;
     private String productName;
     private String quantity;

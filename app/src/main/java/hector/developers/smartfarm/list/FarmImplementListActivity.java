@@ -64,7 +64,7 @@ public class FarmImplementListActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<FarmImplements>> call, Throwable t) {
 
-                Toast.makeText(FarmImplementListActivity.this, "" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(FarmImplementListActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

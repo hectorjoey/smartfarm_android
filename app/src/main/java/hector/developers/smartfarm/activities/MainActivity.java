@@ -9,6 +9,7 @@ import com.google.android.material.card.MaterialCardView;
 import hector.developers.smartfarm.R;
 import hector.developers.smartfarm.list.FarmImplementListActivity;
 import hector.developers.smartfarm.list.ProductListActivity;
+import hector.developers.smartfarm.list.UsersList;
 
 public class MainActivity extends AppCompatActivity {
     MaterialCardView mViewProductsCardId, mViewImplementCardId, mViewUsersCardId;
@@ -19,6 +20,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mViewProductsCardId = findViewById(R.id.viewProdCardId);
         mViewImplementCardId = findViewById(R.id.viewImpCardId);
+        mViewUsersCardId = findViewById(R.id.viewAllUsersCardId);
+
+        mViewUsersCardId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), UsersList.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         mViewImplementCardId.setOnClickListener(new View.OnClickListener() {
             @Override

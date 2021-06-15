@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import hector.developers.smartfarm.R;
+import hector.developers.smartfarm.details.FarmImpleDetailsActivity;
 import hector.developers.smartfarm.details.FarmImplementDetailsActivity;
 import hector.developers.smartfarm.model.FarmImplements;
 
@@ -43,7 +44,7 @@ public class FarmAdapter extends RecyclerView.Adapter<FarmAdapter.ViewHolder> {
         holder.tvImplementSize.setText(farmImplements.getSize());
         holder.tvImplementPrice.setText(farmImplements.getPrice());
         holder.tvImplementState.setText(farmImplements.getState());
-        holder.tvImplementLga.setText(farmImplements.getLga());
+        holder.tvImplementCategory.setText(farmImplements.getImplementCategory());
         holder.tvImplementLocation.setText(farmImplements.getLocation());
 
         holder.cardView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_scale));
@@ -58,7 +59,7 @@ public class FarmAdapter extends RecyclerView.Adapter<FarmAdapter.ViewHolder> {
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent implementIntent = new Intent(context, FarmImplementDetailsActivity.class);
+                Intent implementIntent = new Intent(context, FarmImpleDetailsActivity.class);
                 implementIntent.putExtra("key", farmImplements);
                 context.startActivity(implementIntent);
             }
@@ -75,7 +76,7 @@ public class FarmAdapter extends RecyclerView.Adapter<FarmAdapter.ViewHolder> {
         private TextView tvImplementSize;
         private TextView tvImplementPrice;
         private TextView tvImplementState;
-        private TextView tvImplementLga;
+        private TextView tvImplementCategory;
         private TextView tvImplementLocation;
         private CardView cardView;
 
@@ -85,7 +86,7 @@ public class FarmAdapter extends RecyclerView.Adapter<FarmAdapter.ViewHolder> {
             tvImplementSize = itemView.findViewById(R.id.tvImplementSize);
             tvImplementPrice = itemView.findViewById(R.id.tvImplementPrice);
             tvImplementState = itemView.findViewById(R.id.tvImplementState);
-//            tvImplementLga = itemView.findViewById(R.id.tvImplementLga);
+            tvImplementCategory = itemView.findViewById(R.id.tvImplementCategory);
             tvImplementLocation = itemView.findViewById(R.id.tvImplementLocation);
             cardView = itemView.findViewById(R.id.implementCardView);
         }

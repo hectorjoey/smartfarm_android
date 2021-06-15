@@ -8,10 +8,10 @@
     tools:context=".details.ProdDetailsActivity">
 
     <androidx.cardview.widget.CardView
-        android:layout_marginTop="170dp"
         android:id="@+id/detailCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="170dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="6dp"
         app:cardUseCompatPadding="true">
@@ -170,26 +170,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="12dp">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/editProductButton"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
-            android:textAllCaps="false"
             android:layout_weight="1"
-            android:text="Edit Product" />
+            android:background="#F4D03F"
+            android:padding="12dp"
+            android:text="Edit Product"
+            android:textAllCaps="false" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/deleteButton"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
             android:layout_weight="1"
-            android:textAllCaps="false"
-            android:text="Delete Product" />
+            android:background="#CD6155"
+            android:padding="12dp"
+            android:text="Delete Product"
+            android:textAllCaps="false" />
     </LinearLayout>
 </LinearLayout>

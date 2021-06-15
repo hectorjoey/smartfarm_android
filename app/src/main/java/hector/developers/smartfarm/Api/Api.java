@@ -47,7 +47,6 @@ public interface Api {
             @Field("productCategory") String productCategory,
             @Field("userId") Long userId);
 
-
     //the signIn call
     @FormUrlEncoded
     @POST("login")
@@ -71,12 +70,13 @@ public interface Api {
             @Field("state") String state,
             @Field("lga") String lga,
             @Field("location") String location,
+            @Field("implementCategory") String implementCategory,
             @Field("userId") Long userId);
 
     @GET("implements")
     Call<List<FarmImplements>> getFarmImplements();
 
-    //fetching user health data
+
     @GET("implement/{userId}")
     Call<List<FarmImplements>> getImplementByUserId(@Path("userId") Long userId);
 
@@ -88,6 +88,9 @@ public interface Api {
 
     @DELETE("product/{id}")
     Call<Products> deleteProduct(@Path("id") long id);
+
+    @DELETE("user/{id}")
+    Call<Users> deleteUser(@Path("id") long id);
 
 //    @Multipart
 //    @PUT("product/{id}")
@@ -101,5 +104,13 @@ public interface Api {
                                  @Part("quantity") RequestBody quantity,
                                  @Part("productCategory") RequestBody productCategory
     );
-}
 
+    @Multipart
+    @PUT("implement/{id}")
+    Call<FarmImplements> updateImplement(@Path("id") Long implementId,
+                                 @Part("implementName") RequestBody implementName,
+                                 @Part("price") RequestBody price,
+                                 @Part("size") RequestBody size,
+                                 @Part("implementCategory") RequestBody implementCategory
+    );
+}

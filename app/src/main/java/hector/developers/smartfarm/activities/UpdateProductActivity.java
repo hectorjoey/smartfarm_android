@@ -28,7 +28,6 @@ import retrofit2.http.Field;
 
 public class UpdateProductActivity extends AppCompatActivity {
     Products products;
-
     private EditText mUpdateProductName, mUpdateQuantity, mUpdatePrice;
     private Spinner mUpdateCategorySpinner;
     private String productId;
@@ -51,8 +50,6 @@ public class UpdateProductActivity extends AppCompatActivity {
         String productsId = String.valueOf(products.getId());
         System.out.println("Products Id::: " + productId);
         System.out.println("Product Id::: " + productsId);
-
-
         mUpdateProductName.setText(products.getProductName());
         mUpdateQuantity.setText(products.getQuantity());
         mUpdatePrice.setText(products.getPrice());
@@ -126,18 +123,18 @@ public class UpdateProductActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Product Updated!", Toast.LENGTH_SHORT).show();
                     Intent updateIntent = new Intent(getApplicationContext(), ProdListActivity.class);
                     startActivity(updateIntent);
-                    System.out.println("Updated Product::: " + response);
+                    System.out.println("Product Updated ::: " + response);
                     progressDialog.dismiss();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Product Updated Failed!", Toast.LENGTH_SHORT).show();
-                    System.out.println("Updated Failed::: " + response);
+                    Toast.makeText(getApplicationContext(), "Product Updating Failed!", Toast.LENGTH_SHORT).show();
+                    System.out.println("Updating Failed::: " + response);
                     progressDialog.dismiss();
                 }
             }
 
             @Override
             public void onFailure(Call<Products> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Error!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
                 System.out.println("Updating Error::: " + t.getMessage());
                 progressDialog.dismiss();
             }

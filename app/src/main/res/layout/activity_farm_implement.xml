@@ -20,6 +20,15 @@
             android:src="@drawable/smartfarmone"
             tools:ignore="ContentDescription" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="Enter Farm Implement"
+            android:textSize="22sp" />
+
+
         <!--Name of Implement-->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textImplementName"
@@ -53,10 +62,9 @@
                 android:id="@+id/editText_implement_size"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:inputType="textCapWords"
+                android:inputType="number"
                 android:padding="4dp"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textSize="15sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!--size of Implement-->
@@ -73,10 +81,42 @@
                 android:id="@+id/editText_implement_price"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:inputType="textCapWords"
+                android:inputType="number"
                 android:padding="4dp"
                 android:textSize="15sp" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- implement category-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/et_custom"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:padding="8dp"
+                    android:text="Farm Implement Category"
+                    android:textColor="#48C9B0"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/implementSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="8dp" />
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -158,6 +198,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="25dp"
             android:background="@drawable/registration_button"
             android:text="Add Farm Implement"
             android:textAllCaps="false" />

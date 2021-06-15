@@ -1,5 +1,6 @@
 package hector.developers.smartfarm.list;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -16,6 +19,8 @@ import java.util.List;
 
 import hector.developers.smartfarm.Api.RetrofitClient;
 import hector.developers.smartfarm.R;
+import hector.developers.smartfarm.activities.FarmImplementDealerActivity;
+import hector.developers.smartfarm.activities.FarmerDashboardActivity;
 import hector.developers.smartfarm.adapter.FarmAdapter;
 import hector.developers.smartfarm.adapter.ProdAdapter;
 import hector.developers.smartfarm.adapter.ProductsAdapter;
@@ -77,5 +82,20 @@ public class FarmListActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = this.getSharedPreferences("userId", Context.MODE_PRIVATE);
         id.put("userId", sharedPreferences.getString("userId", null));
         return id;
+    }
+
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle("Want to go back?")
+                .setMessage("Are you sure you want to go back?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        Intent intent = new Intent(FarmListActivity.this, FarmImplementDealerActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
+                    }
+                }).create().show();
     }
 }

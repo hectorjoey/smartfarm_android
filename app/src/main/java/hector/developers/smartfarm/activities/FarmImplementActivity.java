@@ -37,7 +37,7 @@ public class FarmImplementActivity extends AppCompatActivity {
     private static final int SPINNER_HEIGHT = 500;
     EditText implement_name, implement_size, implement_price, implement_location;
     Button addImplement;
-    private Spinner mStateSpinner, mLgaSpinner;
+    private Spinner mStateSpinner, mLgaSpinner, mImplementCategory;
     private String mState, mLga;
     private List<String> states;
     private String userId;
@@ -50,6 +50,7 @@ public class FarmImplementActivity extends AppCompatActivity {
         implement_size = findViewById(R.id.editText_implement_size);
         implement_price = findViewById(R.id.editText_implement_price);
         implement_location = findViewById(R.id.editText_implement_location);
+        mImplementCategory = findViewById(R.id.implementSpinner);
         addImplement = findViewById(R.id.btn_register_implement);
 
         HashMap<String, String> id = getUserId();
@@ -65,6 +66,7 @@ public class FarmImplementActivity extends AppCompatActivity {
 
         //call to method that'll set up state and lga spinner
         setupSpinners();
+        setUpiImplementCategory();
 
         addImplement.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +77,7 @@ public class FarmImplementActivity extends AppCompatActivity {
                 final String location = implement_location.getText().toString().trim();
                 final String state = String.valueOf(mStateSpinner.getSelectedItem());
                 final String lga = String.valueOf(mLgaSpinner.getSelectedItem());
+                final String implementCategory = String.valueOf(mImplementCategory.getSelectedItem());
 
                 if (TextUtils.isEmpty(implementName)) {
                     Toast.makeText(getApplicationContext(), "Enter Name of Farm Implement!", Toast.LENGTH_SHORT).show();
@@ -94,11 +97,21 @@ public class FarmImplementActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(location)) {
                     Toast.makeText(getApplicationContext(), "Enter your location!", Toast.LENGTH_SHORT).show();
                 }
-                registerImplement(implementName, size, price, state, lga, location, userId);
+                registerImplement(implementName, size, price, state, lga, location, implementCategory, userId);
 
             }
         });
 
+    }
+
+    private void setUpiImplementCategory() {
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> implementCategoryAdapter = ArrayAdapter.createFromResource(this,
+                R.array.categoryImplementArray, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        implementCategoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        mImplementCategory.setAdapter(implementCategoryAdapter);
     }
 
     private void setupSpinners() {
@@ -183,7 +196,7 @@ public class FarmImplementActivity extends AppCompatActivity {
     }
 
 
-    public void registerImplement(String implementName, String size, String price, String state, String lga, String location, String userId) {
+    public void registerImplement(String implementName, String size, String price, String state, String lga, String location, String implementCategory, String userId) {
         //making api calls
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Sending Data...");
@@ -193,7 +206,7 @@ public class FarmImplementActivity extends AppCompatActivity {
         Call<FarmImplements> call = RetrofitClient
                 .getInstance()
                 .getApi()
-                .createFarmImplement(implementName, size, price, state, lga, location, Long.valueOf(userId)
+                .createFarmImplement(implementName, size, price, state, lga, location, implementCategory, Long.valueOf(userId)
                 );
         call.enqueue(new Callback<FarmImplements>() {
             @Override

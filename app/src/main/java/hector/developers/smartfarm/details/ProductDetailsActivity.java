@@ -1,5 +1,6 @@
 package hector.developers.smartfarm.details;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -26,6 +27,7 @@ import co.paystack.android.model.Card;
 import co.paystack.android.model.Charge;
 import hector.developers.smartfarm.R;
 import hector.developers.smartfarm.activities.SuccessPageActivity;
+import hector.developers.smartfarm.list.ProductListActivity;
 import hector.developers.smartfarm.model.Products;
 
 public class ProductDetailsActivity extends AppCompatActivity {
@@ -43,7 +45,6 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private SharedPreferences pref;
     private Editor editor;
     private String responseEmail;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,18 +171,18 @@ public class ProductDetailsActivity extends AppCompatActivity {
         });
     }
 
-//    public void onBackPressed() {
-//        new AlertDialog.Builder(this)
-//                .setTitle("Want to go back?")
-//                .setMessage("Are you sure you want to go back?")
-//                .setNegativeButton(android.R.string.no, null)
-//                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface arg0, int arg1) {
-//                        Intent intent = new Intent(ProductDetailsActivity.this, ProductListActivity.class);
-//                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                        startActivity(intent);
-//                        finish();
-//                    }
-//                }).create().show();
-//    }
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle("Want to go back?")
+                .setMessage("Are you sure you want to go back?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        Intent intent = new Intent(ProductDetailsActivity.this, ProductListActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
+                    }
+                }).create().show();
+    }
 }

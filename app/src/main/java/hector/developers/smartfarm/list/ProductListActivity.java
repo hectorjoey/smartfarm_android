@@ -76,7 +76,7 @@ public class ProductListActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Products>> call, Throwable t) {
-                Toast.makeText(ProductListActivity.this, "" + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProductListActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

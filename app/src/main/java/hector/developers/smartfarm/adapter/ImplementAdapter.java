@@ -22,7 +22,7 @@ import hector.developers.smartfarm.R;
 import hector.developers.smartfarm.details.FarmImplementDetailsActivity;
 import hector.developers.smartfarm.model.FarmImplements;
 
-public class ImplementAdapter extends RecyclerView.Adapter<ImplementAdapter.ViewHolder>  implements Filterable {
+public class ImplementAdapter extends RecyclerView.Adapter<ImplementAdapter.ViewHolder> implements Filterable {
     List<FarmImplements> farmList;
     Context context;
     private List<FarmImplements> farmImplementsListFull;
@@ -39,14 +39,15 @@ public class ImplementAdapter extends RecyclerView.Adapter<ImplementAdapter.View
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.implement_lists, parent, false);
         return new ImplementAdapter.ViewHolder(v);
     }
+
     @Override
     public void onBindViewHolder(@NonNull ImplementAdapter.ViewHolder holder, int position) {
-        final FarmImplements farmImplements  = farmList.get(position);
+        final FarmImplements farmImplements = farmList.get(position);
         holder.tvImplementName.setText(farmImplements.getImplementName());
         holder.tvImplementSize.setText(farmImplements.getSize());
         holder.tvImplementPrice.setText(farmImplements.getPrice());
         holder.tvImplementState.setText(farmImplements.getState());
-        holder.tvImplementLga.setText(farmImplements.getLga());
+        holder.tvImplementCategory.setText(farmImplements.getImplementCategory());
         holder.tvImplementLocation.setText(farmImplements.getLocation());
 
         holder.cardView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_scale));
@@ -78,7 +79,7 @@ public class ImplementAdapter extends RecyclerView.Adapter<ImplementAdapter.View
         private TextView tvImplementSize;
         private TextView tvImplementPrice;
         private TextView tvImplementState;
-        private TextView tvImplementLga;
+        private TextView tvImplementCategory;
         private TextView tvImplementLocation;
         private CardView cardView;
 
@@ -88,11 +89,12 @@ public class ImplementAdapter extends RecyclerView.Adapter<ImplementAdapter.View
             tvImplementSize = itemView.findViewById(R.id.tvImplementSize);
             tvImplementPrice = itemView.findViewById(R.id.tvImplementPrice);
             tvImplementState = itemView.findViewById(R.id.tvImplementState);
-//            tvImplementLga = itemView.findViewById(R.id.tvImplementLga);
+            tvImplementCategory = itemView.findViewById(R.id.tvImplementCategory);
             tvImplementLocation = itemView.findViewById(R.id.tvImplementLocation);
             cardView = itemView.findViewById(R.id.implementCardView);
         }
     }
+
     @Override
     public Filter getFilter() {
         return exampleFilter;
@@ -110,7 +112,8 @@ public class ImplementAdapter extends RecyclerView.Adapter<ImplementAdapter.View
                 for (FarmImplements farmImplements : farmImplementsListFull) {
                     if (farmImplements.getImplementName().toLowerCase().contains(filterPattern)
                             || farmImplements.getPrice().toLowerCase().contains(filterPattern)
-                            || farmImplements.getState().toLowerCase().contains(filterPattern)) {
+                            || farmImplements.getState().toLowerCase().contains(filterPattern)
+                            || farmImplements.getImplementCategory().toLowerCase().contains(filterPattern)) {
                         filteredList.add(farmImplements);
                     }
                 }

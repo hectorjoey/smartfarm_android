@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ import co.paystack.android.Transaction;
 import co.paystack.android.model.Card;
 import co.paystack.android.model.Charge;
 import hector.developers.smartfarm.R;
+import hector.developers.smartfarm.activities.FarmImplementDealerActivity;
 import hector.developers.smartfarm.activities.SuccessPageActivity;
 import hector.developers.smartfarm.model.FarmImplements;
 
@@ -185,7 +187,7 @@ public class FarmImplementDetailsActivity extends AppCompatActivity {
 //                .setNegativeButton(android.R.string.no, null)
 //                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 //                    public void onClick(DialogInterface arg0, int arg1) {
-//                        Intent intent = new Intent(FarmImplementDetails.this, FarmImplementDealer.class);
+//                        Intent intent = new Intent(FarmImplementDetailsActivity.this, FarmImplementDealerActivity.class);
 //                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 //                        startActivity(intent);
 //                        finish();

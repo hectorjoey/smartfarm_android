@@ -112,6 +112,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (Products products : productsListFull) {
                     if (products.getLocation().toLowerCase().contains(filterPattern)
+                            || products.getState().toLowerCase().contains(filterPattern)
                             || products.getProductName().toLowerCase().contains(filterPattern)
                             || products.getProductCategory().toLowerCase().contains(filterPattern)
                             || products.getPrice().toLowerCase().contains(filterPattern)) {
