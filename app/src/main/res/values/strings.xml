@@ -44,4 +44,11 @@
         <item>"category 4"</item>
     </string-array>
 
+    <string-array name="categoryImplementArray">
+        <item>"Implement Category 1"</item>
+        <item>"Implement Category 2"</item>
+        <item>"Implement Category 3"</item>
+        <item>"Implement Category 4"</item>
+    </string-array>
+
 </resources>
