@@ -173,7 +173,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Users> call, Throwable t) {
-                Toast.makeText(LoginActivity.this,t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Check your internet connection!", Toast.LENGTH_SHORT).show();
                 System.out.println("throwing ..." + t);
                 progressDialog.dismiss();
             }

@@ -38,17 +38,21 @@
 
 
     <string-array name="categoryProductArray">
-        <item>"category 1"</item>
-        <item>"category 2"</item>
-        <item>"category 3"</item>
-        <item>"category 4"</item>
+        <item>"Tuber"</item>
+        <item>"Vegetable"</item>
+        <item>"Fruit"</item>
+        <item>"Root</item>
+        <item>Nut"</item>
+        <item>"Legumes"</item>
+        <item>"Egg"</item>
+        <item>"Beef"</item>
     </string-array>
 
     <string-array name="categoryImplementArray">
-        <item>"Implement Category 1"</item>
-        <item>"Implement Category 2"</item>
-        <item>"Implement Category 3"</item>
-        <item>"Implement Category 4"</item>
+        <item>"Chemicals"</item>
+        <item>"Farm machinery"</item>
+        <item>"Simple Farm Tool"</item>
+        <item>"Hybrid Seeds"</item>
+        <item>"Seedlings"</item>
     </string-array>
-
 </resources>

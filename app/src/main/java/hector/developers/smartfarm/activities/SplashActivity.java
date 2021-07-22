@@ -12,7 +12,6 @@ import hector.developers.smartfarm.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-    Handler handler;
     ImageView mSplash;
 
     @Override
@@ -21,15 +20,18 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         mSplash = findViewById(R.id.splash);
         mSplash.setAnimation(AnimationUtils.loadAnimation(SplashActivity.this, R.anim.blink));
-        handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
+        Thread thread = new Thread() {
             public void run() {
-                Intent mainIntent = new Intent(SplashActivity.this, LoginActivity.class);
-                startActivity(mainIntent);
-                finish();
+                try {
+                    sleep(3 * 1000);
+                    Intent intent = new Intent(getBaseContext(), LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
-        }, 3000);
-
+        };
+        thread.start();
     }
 }

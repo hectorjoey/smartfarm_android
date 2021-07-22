@@ -98,7 +98,6 @@ public class FarmImplementActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Enter your location!", Toast.LENGTH_SHORT).show();
                 }
                 registerImplement(implementName, size, price, state, lga, location, implementCategory, userId);
-
             }
         });
 
@@ -247,5 +246,4 @@ public class FarmImplementActivity extends AppCompatActivity {
         id.put("userId", sharedPreferences.getString("userId", null));
         return id;
     }
-
 }

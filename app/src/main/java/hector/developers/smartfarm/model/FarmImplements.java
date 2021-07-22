@@ -11,6 +11,7 @@ public class FarmImplements implements Serializable {
     private String lga;
     private String implementCategory;
     private String location;
+    private Long userId;
 
     public FarmImplements() {}
 
@@ -85,5 +86,13 @@ public class FarmImplements implements Serializable {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }
